@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Platform</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+  </head>
+  <body>
+    <main>
+      <nav class="navbar">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <div>Payment Hub</div>
+            <small style="color: #b4b4c3">API & Experience</small>
+          </div>
+        </div>
+        <div class="tabs" role="tablist">
+          <button class="nav-tab active" data-target="home" role="tab">Home</button>
+          <button class="nav-tab" data-target="experience" role="tab">Experience</button>
+          <button class="nav-tab" data-target="converter" role="tab">Currency</button>
+          <button class="nav-tab" data-target="signup" role="tab">Sign up</button>
+        </div>
+      </nav>
+
+      <section class="hero">
+        <div class="badge">Live payments</div>
+        <h1>Collect, capture, and convert in one sleek console.</h1>
+        <p class="notice">Glassy navigation, colorful gradients, and real-time currency conversion powered by exchangerate.host.</p>
+        <div class="chip-row">
+          <span class="chip">Payments API</span>
+          <span class="chip">Fraud-safe captures</span>
+          <span class="chip">Google sign-up ready</span>
+        </div>
+        <p style="margin-top: 0.6rem">
+          <a class="button" href="/docs" target="_blank" rel="noopener">View API Docs</a>
+        </p>
+      </section>
+
+      <section id="home" class="layout-grid tab-panel">
+        <article class="card">
+          <div class="section-title">
+            <h2>Accelerated setup</h2>
+            <small>Start in under a minute</small>
+          </div>
+          <p>Spin up the FastAPI backend with a single <code>uvicorn</code> command and explore the live docs.</p>
+          <div class="chip-row">
+            <span class="chip">FastAPI</span>
+            <span class="chip">SQLModel</span>
+            <span class="chip">SQLite</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="section-title">
+            <h2>Payment lifecycle</h2>
+            <small>create → authorize → capture → refund</small>
+          </div>
+          <p>
+            Use RESTful endpoints to orchestrate a full payment flow, including idempotent retrieval and smart validation that
+            prevents premature refunds.
+          </p>
+          <ul>
+            <li>Create payments with currency and description</li>
+            <li>Authorize and capture when funds are ready</li>
+            <li>Refund safely after capture</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="section-title">
+            <h2>UI crafted for clarity</h2>
+            <small>glassy tabs</small>
+          </div>
+          <p>Navigate with translucent tabs that float over a neon gradient background. Everything stays crisp and legible with subtle blur.</p>
+          <p class="notice">Try switching tabs above to see the glass effect.</p>
+        </article>
+      </section>
+
+      <section id="experience" class="layout-grid tab-panel" hidden>
+        <article class="card">
+          <div class="section-title">
+            <h2>Dashboard quickstart</h2>
+            <small>Local dev</small>
+          </div>
+          <p>Launch the server and access this dashboard at <code>http://localhost:8000</code>. API docs remain available at <code>/docs</code>.</p>
+          <div class="chip-row">
+            <span class="chip">Live reload ready</span>
+            <span class="chip">CORS friendly</span>
+            <span class="chip">Typed schemas</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="section-title">
+            <h2>API endpoints</h2>
+            <small>core routes</small>
+          </div>
+          <p>Use these endpoints to power the experience:</p>
+          <ul>
+            <li><code>POST /payments</code> — create a payment</li>
+            <li><code>GET /payments</code> — list payments</li>
+            <li><code>POST /payments/{id}/authorize</code> — hold funds</li>
+            <li><code>POST /payments/{id}/capture</code> — finalize collection</li>
+            <li><code>POST /payments/{id}/refund</code> — return funds</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="section-title">
+            <h2>Brand-ready surfaces</h2>
+            <small>designed states</small>
+          </div>
+          <p>Buttons and chips use dual-tone gradients with soft shadows, ensuring the UI feels premium across devices.</p>
+          <div class="chip-row">
+            <span class="chip">WCAG-friendly contrast</span>
+            <span class="chip">Responsive grid</span>
+            <span class="chip">Backdrop blur</span>
+          </div>
+        </article>
+      </section>
+
+      <section id="converter" class="layout-grid tab-panel" hidden>
+        <article class="card">
+          <div class="section-title">
+            <h2>Currency converter</h2>
+            <small>real time</small>
+          </div>
+          <p>Convert currencies on the fly using live rates from exchangerate.host.</p>
+          <form id="converter-form" class="converter">
+            <div>
+              <label for="amount">Amount</label>
+              <input id="amount" name="amount" class="input" type="number" min="0" step="0.01" value="100" required />
+            </div>
+            <div>
+              <label for="from">From</label>
+              <select id="from" name="from">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="JPY">JPY</option>
+                <option value="CAD">CAD</option>
+              </select>
+            </div>
+            <div>
+              <label for="to">To</label>
+              <select id="to" name="to">
+                <option value="EUR">EUR</option>
+                <option value="USD">USD</option>
+                <option value="GBP">GBP</option>
+                <option value="JPY">JPY</option>
+                <option value="INR">INR</option>
+              </select>
+            </div>
+            <div style="display: flex; align-items: flex-end">
+              <button type="submit" class="button" style="width: 100%">Convert now</button>
+            </div>
+          </form>
+          <div id="conversion-result" class="result">100 USD ≈ ...</div>
+          <p class="notice">Rates fetched live via exchangerate.host.</p>
+        </article>
+
+        <article class="card">
+          <div class="section-title">
+            <h2>Transparent fees</h2>
+            <small>demo messaging</small>
+          </div>
+          <p>Keep your users informed with clear summaries and glassy info cards. Add your pricing breakdown or funding rules here.</p>
+          <div class="chip-row">
+            <span class="chip">Instant FX lookups</span>
+            <span class="chip">Multi-currency display</span>
+            <span class="chip">Optimistic UI</span>
+          </div>
+        </article>
+      </section>
+
+      <section id="signup" class="layout-grid tab-panel" hidden>
+        <article class="card">
+          <div class="section-title">
+            <h2>Join the platform</h2>
+            <small>Sign up</small>
+          </div>
+          <p>Sign up with your email or continue with Google using the new Identity Services button.</p>
+          <div class="form-grid">
+            <div class="input-group">
+              <label for="name">Full name</label>
+              <input id="name" name="name" class="input" placeholder="Alex Payment" />
+            </div>
+            <div class="input-group">
+              <label for="email">Work email</label>
+              <input id="email" name="email" class="input" type="email" placeholder="you@example.com" />
+            </div>
+            <div class="input-group">
+              <label for="company">Company</label>
+              <input id="company" name="company" class="input" placeholder="Neon Labs" />
+            </div>
+          </div>
+          <p style="margin-top: 0.8rem">
+            <a class="button" href="/signup">Open sign-up page</a>
+          </p>
+          <div style="margin-top: 1rem">
+            <div
+              id="g_id_onload"
+              data-client_id="YOUR_GOOGLE_CLIENT_ID"
+              data-context="signup"
+              data-ux_mode="popup"
+              data-auto_prompt="false"
+            ></div>
+            <div class="g_id_signin" data-type="standard" data-shape="pill" data-theme="outline" data-size="large"></div>
+          </div>
+          <p class="notice">Replace the placeholder client ID with your OAuth client to activate Google sign up.</p>
+        </article>
+
+        <article class="card">
+          <div class="section-title">
+            <h2>Security ready</h2>
+            <small>best practices</small>
+          </div>
+          <p>OAuth is handled entirely by Google; forward tokens to your backend when exchanging for a session or account record.</p>
+          <div class="chip-row">
+            <span class="chip">Token exchange</span>
+            <span class="chip">Short-lived credentials</span>
+            <span class="chip">Session hand-off</span>
+          </div>
+        </article>
+      </section>
+
+      <footer>Payment Hub — glassy tabs, colorful gradients, and modern payments API.</footer>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>

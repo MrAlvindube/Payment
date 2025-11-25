@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up • Payment Hub</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+  </head>
+  <body>
+    <main>
+      <nav class="navbar">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <div>Payment Hub</div>
+            <small style="color: #b4b4c3">Sign-up</small>
+          </div>
+        </div>
+        <div class="tabs" role="tablist">
+          <a class="nav-tab" href="/">← Back to home</a>
+        </div>
+      </nav>
+
+      <section class="hero">
+        <div class="badge">Join us</div>
+        <h1>Get started with a glassy, premium onboarding flow.</h1>
+        <p class="notice">Sign up using email or continue with Google. Replace the placeholder client ID to activate OAuth.</p>
+      </section>
+
+      <section class="layout-grid" style="margin-top: 1.5rem">
+        <article class="card">
+          <div class="section-title">
+            <h2>Create your account</h2>
+            <small>secure by design</small>
+          </div>
+          <div class="form-grid">
+            <div class="input-group">
+              <label for="signup-name">Full name</label>
+              <input id="signup-name" class="input" placeholder="Alex Payment" />
+            </div>
+            <div class="input-group">
+              <label for="signup-email">Work email</label>
+              <input id="signup-email" class="input" type="email" placeholder="you@example.com" />
+            </div>
+            <div class="input-group">
+              <label for="signup-password">Password</label>
+              <input id="signup-password" class="input" type="password" placeholder="••••••••" />
+            </div>
+          </div>
+          <p style="margin-top: 0.8rem">
+            <button class="button" type="button">Create account</button>
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="section-title">
+            <h2>Sign up with Google</h2>
+            <small>OAuth</small>
+          </div>
+          <p>Use Google Identity Services to let users join with one tap.</p>
+          <div
+            id="g_id_onload"
+            data-client_id="YOUR_GOOGLE_CLIENT_ID"
+            data-context="signup"
+            data-ux_mode="popup"
+            data-auto_prompt="false"
+          ></div>
+          <div class="g_id_signin" data-type="standard" data-shape="pill" data-theme="outline" data-size="large"></div>
+          <p class="notice">Swap in your client ID and login_uri to complete the OAuth flow.</p>
+        </article>
+      </section>
+
+      <footer>Payment Hub — Ready for Google sign up and colorful currency conversions.</footer>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
