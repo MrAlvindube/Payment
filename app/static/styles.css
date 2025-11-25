@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 :root {
-  --glass-bg: rgba(255, 255, 255, 0.14);
-  --glass-border: rgba(255, 255, 255, 0.45);
+  --glass-bg: rgba(255, 255, 255, 0.12);
+  --glass-border: rgba(255, 255, 255, 0.4);
   --accent: #7c3aed;
   --accent-2: #5eead4;
   --text: #e6e6ed;
@@ -27,7 +27,7 @@ body {
 }
 
 main {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   padding-top: 1rem;
 }
@@ -109,6 +109,10 @@ main {
   padding: 1.25rem;
   box-shadow: var(--shadow);
   backdrop-filter: blur(12px);
+}
+
+.card.wide {
+  grid-column: 1 / -1;
 }
 
 .card h2 {
@@ -196,6 +200,12 @@ main {
   transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
+.button.ghost {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text);
+  box-shadow: none;
+}
+
 .button:hover {
   transform: translateY(-1px);
   box-shadow: 0 12px 40px rgba(124, 58, 237, 0.5);
@@ -207,7 +217,8 @@ main {
   gap: 0.75rem;
 }
 
-.input, select {
+.input,
+select {
   width: 100%;
   padding: 0.85rem 1rem;
   border-radius: 12px;
@@ -257,7 +268,184 @@ footer {
   font-size: 0.95rem;
 }
 
-@media (max-width: 720px) {
+.stat-card {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.18), rgba(94, 234, 212, 0.15));
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 0.9rem;
+  box-shadow: var(--shadow);
+}
+
+.stat-card.big {
+  padding: 1.2rem;
+}
+
+.stat-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0.1rem 0;
+}
+
+.stat-bottom {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.pill.success {
+  color: #1dd1a1;
+  border-color: rgba(29, 209, 161, 0.35);
+}
+
+.pill.warning {
+  color: #f6e05e;
+  border-color: rgba(246, 224, 94, 0.4);
+}
+
+.pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.list.detailed li {
+  align-items: flex-start;
+}
+
+.muted {
+  color: var(--muted);
+  margin: 0;
+}
+
+.auth-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.auth-card {
+  padding: 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 1px 12px rgba(255, 255, 255, 0.05);
+}
+
+.auth-card h3 {
+  margin-top: 0;
+}
+
+.text-link {
+  background: none;
+  border: none;
+  color: var(--accent-2);
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.35rem 0;
+}
+
+.google-area {
+  margin-top: 0.75rem;
+}
+
+.code-inputs {
+  display: flex;
+  gap: 0.4rem;
+  margin: 0.4rem 0;
+}
+
+.code-inputs .code {
+  max-width: 55px;
+  text-align: center;
+}
+
+.card-preview {
+  position: relative;
+  height: 200px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.65), rgba(94, 234, 212, 0.6));
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #0f1027;
+}
+
+.card-chip {
+  width: 48px;
+  height: 34px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.card-number {
+  font-size: 1.25rem;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+}
+
+.steps {
+  padding-left: 1.2rem;
+  color: var(--text);
+}
+
+.steps li {
+  margin-bottom: 0.55rem;
+}
+
+footer a {
+  color: inherit;
+}
+
+@media (max-width: 900px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;

@@ -18,7 +18,7 @@ tabs.forEach((tab) => {
   });
 });
 
-const initial = window.location.hash?.replace('#', '') || 'home';
+const initial = window.location.hash?.replace('#', '') || 'overview';
 setActiveTab(initial);
 
 if (converterForm) {

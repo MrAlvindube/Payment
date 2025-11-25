@@ -10,6 +10,7 @@ A minimal FastAPI-based payment platform that supports creating, authorizing, ca
 - Persist data in SQLite via SQLModel
 - Glassmorphic homepage and sign-up experience with Google Identity button
 - Real-time currency converter powered by exchangerate.host
+- Multi-section demo UI: authentication, dashboard, card management, send/receive flows, wallet, transaction history, support, and compliance callouts inspired by premium mobile finance apps
 
 ## Getting Started
 1. Install dependencies:

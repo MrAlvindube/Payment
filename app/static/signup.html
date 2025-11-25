@@ -24,8 +24,8 @@
 
       <section class="hero">
         <div class="badge">Join us</div>
-        <h1>Get started with a glassy, premium onboarding flow.</h1>
-        <p class="notice">Sign up using email or continue with Google. Replace the placeholder client ID to activate OAuth.</p>
+        <h1>Glassy onboarding with email, Google, password reset, and two-factor entry.</h1>
+        <p class="notice">Replace the placeholder Google client ID to activate OAuth.</p>
       </section>
 
       <section class="layout-grid" style="margin-top: 1.5rem">
@@ -69,9 +69,40 @@
           <div class="g_id_signin" data-type="standard" data-shape="pill" data-theme="outline" data-size="large"></div>
           <p class="notice">Swap in your client ID and login_uri to complete the OAuth flow.</p>
         </article>
+
+        <article class="card">
+          <div class="section-title">
+            <h2>Already have an account?</h2>
+            <small>Login + reset</small>
+          </div>
+          <div class="form-grid">
+            <div class="input-group">
+              <label for="login-email">Email or phone</label>
+              <input id="login-email" class="input" placeholder="you@example.com / +1 222-333-4444" />
+            </div>
+            <div class="input-group">
+              <label for="login-password">Password</label>
+              <input id="login-password" class="input" type="password" placeholder="••••••••" />
+            </div>
+          </div>
+          <p style="margin-top: 0.8rem">
+            <button class="button" type="button">Log in</button>
+            <button class="button ghost" type="button">Forgot password</button>
+          </p>
+          <div class="input-group" style="margin-top: 0.6rem">
+            <label for="two-fa">Two-factor code</label>
+            <div class="code-inputs">
+              <input class="input code" maxlength="1" aria-label="Digit 1" />
+              <input class="input code" maxlength="1" aria-label="Digit 2" />
+              <input class="input code" maxlength="1" aria-label="Digit 3" />
+              <input class="input code" maxlength="1" aria-label="Digit 4" />
+            </div>
+            <button class="button" type="button">Verify</button>
+          </div>
+        </article>
       </section>
 
-      <footer>Payment Hub — Ready for Google sign up and colorful currency conversions.</footer>
+      <footer>Payment Hub — Ready for Google sign up and glassy authentication screens.</footer>
     </main>
     <script src="/static/app.js"></script>
   </body>

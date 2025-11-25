@@ -14,125 +14,73 @@
           <div class="logo" aria-hidden="true"></div>
           <div>
             <div>Payment Hub</div>
-            <small style="color: #b4b4c3">API & Experience</small>
+            <small style="color: #b4b4c3">Money OS</small>
           </div>
         </div>
         <div class="tabs" role="tablist">
-          <button class="nav-tab active" data-target="home" role="tab">Home</button>
-          <button class="nav-tab" data-target="experience" role="tab">Experience</button>
-          <button class="nav-tab" data-target="converter" role="tab">Currency</button>
-          <button class="nav-tab" data-target="signup" role="tab">Sign up</button>
+          <button class="nav-tab active" data-target="overview" role="tab">Overview</button>
+          <button class="nav-tab" data-target="auth" role="tab">Auth</button>
+          <button class="nav-tab" data-target="dashboard" role="tab">Dashboard</button>
+          <button class="nav-tab" data-target="cards" role="tab">Cards</button>
+          <button class="nav-tab" data-target="moneyflows" role="tab">Money Flows</button>
+          <button class="nav-tab" data-target="wallet" role="tab">Wallet</button>
+          <button class="nav-tab" data-target="history" role="tab">History</button>
+          <button class="nav-tab" data-target="support" role="tab">Support</button>
+          <button class="nav-tab" data-target="security" role="tab">Security</button>
         </div>
       </nav>
 
       <section class="hero">
-        <div class="badge">Live payments</div>
-        <h1>Collect, capture, and convert in one sleek console.</h1>
-        <p class="notice">Glassy navigation, colorful gradients, and real-time currency conversion powered by exchangerate.host.</p>
+        <div class="badge">Glassy UI · Premium Flow</div>
+        <h1>All-in-one payments console that mirrors modern finance apps.</h1>
+        <p class="notice">
+          Inspired by mobile-first designs: translucent tabs, bold gradients, real-time currency conversion, and every screen you need to ship a money movement experience.
+        </p>
         <div class="chip-row">
-          <span class="chip">Payments API</span>
-          <span class="chip">Fraud-safe captures</span>
-          <span class="chip">Google sign-up ready</span>
+          <span class="chip">Auth + 2FA</span>
+          <span class="chip">Wallet & Cards</span>
+          <span class="chip">Send / Receive</span>
+          <span class="chip">KYC & Compliance</span>
         </div>
         <p style="margin-top: 0.6rem">
-          <a class="button" href="/docs" target="_blank" rel="noopener">View API Docs</a>
+          <a class="button" href="/signup">Open sign-up page</a>
+          <a class="button ghost" href="/docs" target="_blank" rel="noopener">View API Docs</a>
         </p>
       </section>
 
-      <section id="home" class="layout-grid tab-panel">
+      <section id="overview" class="layout-grid tab-panel">
         <article class="card">
           <div class="section-title">
-            <h2>Accelerated setup</h2>
-            <small>Start in under a minute</small>
+            <h2>Quick snapshot</h2>
+            <small>Balances & activity</small>
           </div>
-          <p>Spin up the FastAPI backend with a single <code>uvicorn</code> command and explore the live docs.</p>
-          <div class="chip-row">
-            <span class="chip">FastAPI</span>
-            <span class="chip">SQLModel</span>
-            <span class="chip">SQLite</span>
+          <div class="stat-card">
+            <div class="stat-top">
+              <div>
+                <p class="muted">Wallet (USD)</p>
+                <p class="stat-value">$40,500.80</p>
+              </div>
+              <span class="pill success">+4.2%</span>
+            </div>
+            <div class="stat-bottom">
+              <span class="pill">Send</span>
+              <span class="pill">Swap</span>
+              <span class="pill">Receive</span>
+              <span class="pill">Pay</span>
+            </div>
           </div>
+          <p class="notice">Matches the glossy cards seen in the inspiration shots.</p>
         </article>
 
-        <article class="card">
-          <div class="section-title">
-            <h2>Payment lifecycle</h2>
-            <small>create → authorize → capture → refund</small>
-          </div>
-          <p>
-            Use RESTful endpoints to orchestrate a full payment flow, including idempotent retrieval and smart validation that
-            prevents premature refunds.
-          </p>
-          <ul>
-            <li>Create payments with currency and description</li>
-            <li>Authorize and capture when funds are ready</li>
-            <li>Refund safely after capture</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <div class="section-title">
-            <h2>UI crafted for clarity</h2>
-            <small>glassy tabs</small>
-          </div>
-          <p>Navigate with translucent tabs that float over a neon gradient background. Everything stays crisp and legible with subtle blur.</p>
-          <p class="notice">Try switching tabs above to see the glass effect.</p>
-        </article>
-      </section>
-
-      <section id="experience" class="layout-grid tab-panel" hidden>
-        <article class="card">
-          <div class="section-title">
-            <h2>Dashboard quickstart</h2>
-            <small>Local dev</small>
-          </div>
-          <p>Launch the server and access this dashboard at <code>http://localhost:8000</code>. API docs remain available at <code>/docs</code>.</p>
-          <div class="chip-row">
-            <span class="chip">Live reload ready</span>
-            <span class="chip">CORS friendly</span>
-            <span class="chip">Typed schemas</span>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="section-title">
-            <h2>API endpoints</h2>
-            <small>core routes</small>
-          </div>
-          <p>Use these endpoints to power the experience:</p>
-          <ul>
-            <li><code>POST /payments</code> — create a payment</li>
-            <li><code>GET /payments</code> — list payments</li>
-            <li><code>POST /payments/{id}/authorize</code> — hold funds</li>
-            <li><code>POST /payments/{id}/capture</code> — finalize collection</li>
-            <li><code>POST /payments/{id}/refund</code> — return funds</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <div class="section-title">
-            <h2>Brand-ready surfaces</h2>
-            <small>designed states</small>
-          </div>
-          <p>Buttons and chips use dual-tone gradients with soft shadows, ensuring the UI feels premium across devices.</p>
-          <div class="chip-row">
-            <span class="chip">WCAG-friendly contrast</span>
-            <span class="chip">Responsive grid</span>
-            <span class="chip">Backdrop blur</span>
-          </div>
-        </article>
-      </section>
-
-      <section id="converter" class="layout-grid tab-panel" hidden>
         <article class="card">
           <div class="section-title">
             <h2>Currency converter</h2>
-            <small>real time</small>
+            <small>Live FX</small>
           </div>
-          <p>Convert currencies on the fly using live rates from exchangerate.host.</p>
           <form id="converter-form" class="converter">
             <div>
               <label for="amount">Amount</label>
-              <input id="amount" name="amount" class="input" type="number" min="0" step="0.01" value="100" required />
+              <input id="amount" name="amount" class="input" type="number" min="0" step="0.01" value="148.50" required />
             </div>
             <div>
               <label for="from">From</label>
@@ -158,76 +106,371 @@
               <button type="submit" class="button" style="width: 100%">Convert now</button>
             </div>
           </form>
-          <div id="conversion-result" class="result">100 USD ≈ ...</div>
-          <p class="notice">Rates fetched live via exchangerate.host.</p>
+          <div id="conversion-result" class="result">148.50 USD ≈ ...</div>
+          <p class="notice">Uses exchangerate.host for real-time rates.</p>
         </article>
 
         <article class="card">
           <div class="section-title">
-            <h2>Transparent fees</h2>
-            <small>demo messaging</small>
+            <h2>Navigation</h2>
+            <small>Tabbed & glassy</small>
           </div>
-          <p>Keep your users informed with clear summaries and glassy info cards. Add your pricing breakdown or funding rules here.</p>
+          <p>
+            Explore the flows with translucent tabs that mirror the multi-screen mockups. Each panel below contains the exact UI blocks requested: authentication, dashboard, card management, send/receive, wallet, history, support, and compliance.
+          </p>
           <div class="chip-row">
-            <span class="chip">Instant FX lookups</span>
-            <span class="chip">Multi-currency display</span>
-            <span class="chip">Optimistic UI</span>
+            <span class="chip">Mobile-inspired</span>
+            <span class="chip">Responsive grid</span>
+            <span class="chip">Dark + neon blend</span>
           </div>
         </article>
       </section>
 
-      <section id="signup" class="layout-grid tab-panel" hidden>
+      <section id="auth" class="layout-grid tab-panel" hidden>
+        <article class="card wide">
+          <div class="section-title">
+            <h2>Authentication screens</h2>
+            <small>Email, phone, Google, 2FA</small>
+          </div>
+          <div class="auth-grid">
+            <div class="auth-card">
+              <h3>Login</h3>
+              <label for="login-identity">Email or phone</label>
+              <input id="login-identity" class="input" placeholder="you@example.com / +1 222-333-4444" />
+              <label for="login-password">Password</label>
+              <input id="login-password" class="input" type="password" placeholder="••••••••" />
+              <button class="button" type="button">Log in</button>
+              <button class="text-link" type="button">Forgot password?</button>
+            </div>
+            <div class="auth-card">
+              <h3>Sign up</h3>
+              <label for="signup-name">Full name</label>
+              <input id="signup-name" class="input" placeholder="Jamie Rivers" />
+              <label for="signup-email">Email</label>
+              <input id="signup-email" class="input" type="email" placeholder="you@example.com" />
+              <label for="signup-phone">Phone</label>
+              <input id="signup-phone" class="input" placeholder="(+44) 7777 000000" />
+              <button class="button" type="button">Create account</button>
+              <div class="google-area">
+                <div
+                  id="g_id_onload"
+                  data-client_id="YOUR_GOOGLE_CLIENT_ID"
+                  data-context="signup"
+                  data-ux_mode="popup"
+                  data-auto_prompt="false"
+                ></div>
+                <div class="g_id_signin" data-type="standard" data-shape="pill" data-theme="outline" data-size="large"></div>
+              </div>
+            </div>
+            <div class="auth-card">
+              <h3>Reset & 2FA</h3>
+              <label for="forgot-email">Reset password</label>
+              <input id="forgot-email" class="input" type="email" placeholder="account@domain.com" />
+              <button class="button ghost" type="button">Send reset link</button>
+              <label for="two-fa">Two-factor code</label>
+              <div class="code-inputs">
+                <input class="input code" maxlength="1" aria-label="Digit 1" />
+                <input class="input code" maxlength="1" aria-label="Digit 2" />
+                <input class="input code" maxlength="1" aria-label="Digit 3" />
+                <input class="input code" maxlength="1" aria-label="Digit 4" />
+              </div>
+              <button class="button" type="button">Verify</button>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section id="dashboard" class="layout-grid tab-panel" hidden>
         <article class="card">
           <div class="section-title">
-            <h2>Join the platform</h2>
-            <small>Sign up</small>
+            <h2>Wallet balance</h2>
+            <small>Primary</small>
           </div>
-          <p>Sign up with your email or continue with Google using the new Identity Services button.</p>
+          <div class="stat-card big">
+            <div class="stat-top">
+              <div>
+                <p class="muted">Wallet (USD)</p>
+                <p class="stat-value">$546.30</p>
+                <p class="muted">€518.00 · £456.12</p>
+              </div>
+              <div class="pill-group">
+                <span class="pill">Notifications</span>
+                <span class="pill">Profile</span>
+              </div>
+            </div>
+            <div class="action-row">
+              <button class="button" type="button">Send Money</button>
+              <button class="button ghost" type="button">Request Money</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="section-title">
+            <h2>Recent transactions</h2>
+            <small>Live list</small>
+          </div>
+          <ul class="list">
+            <li><span>Send to Maya</span><span class="muted">- $120.00 · Visa •4068</span></li>
+            <li><span>Top up from Chase</span><span class="muted">+ $350.00 · ACH</span></li>
+            <li><span>Refund from Gear</span><span class="muted">+ $48.90 · Mastercard</span></li>
+            <li><span>Transfer to Savings</span><span class="muted">- $75.00 · Wallet</span></li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="section-title">
+            <h2>Highlights</h2>
+            <small>Notifications</small>
+          </div>
+          <div class="chip-row">
+            <span class="chip">Alerts · 2</span>
+            <span class="chip">Profile updated</span>
+            <span class="chip">New payout ready</span>
+          </div>
+          <p class="notice">Icons in the inspiration map to these chips and the quick-access actions above.</p>
+        </article>
+      </section>
+
+      <section id="cards" class="layout-grid tab-panel" hidden>
+        <article class="card">
+          <div class="section-title">
+            <h2>Add card</h2>
+            <small>Card input</small>
+          </div>
           <div class="form-grid">
             <div class="input-group">
-              <label for="name">Full name</label>
-              <input id="name" name="name" class="input" placeholder="Alex Payment" />
+              <label for="card-number">Card number</label>
+              <input id="card-number" class="input" placeholder="4111 1111 1111 1111" />
             </div>
             <div class="input-group">
-              <label for="email">Work email</label>
-              <input id="email" name="email" class="input" type="email" placeholder="you@example.com" />
+              <label for="card-exp">Expiration</label>
+              <input id="card-exp" class="input" placeholder="MM/YY" />
             </div>
             <div class="input-group">
-              <label for="company">Company</label>
-              <input id="company" name="company" class="input" placeholder="Neon Labs" />
+              <label for="card-cvv">CVV</label>
+              <input id="card-cvv" class="input" placeholder="123" />
             </div>
           </div>
-          <p style="margin-top: 0.8rem">
-            <a class="button" href="/signup">Open sign-up page</a>
-          </p>
-          <div style="margin-top: 1rem">
-            <div
-              id="g_id_onload"
-              data-client_id="YOUR_GOOGLE_CLIENT_ID"
-              data-context="signup"
-              data-ux_mode="popup"
-              data-auto_prompt="false"
-            ></div>
-            <div class="g_id_signin" data-type="standard" data-shape="pill" data-theme="outline" data-size="large"></div>
-          </div>
-          <p class="notice">Replace the placeholder client ID with your OAuth client to activate Google sign up.</p>
+          <p style="margin-top: 0.8rem"><button class="button" type="button">Add card</button></p>
         </article>
 
         <article class="card">
           <div class="section-title">
-            <h2>Security ready</h2>
-            <small>best practices</small>
+            <h2>Saved cards</h2>
+            <small>Verification</small>
           </div>
-          <p>OAuth is handled entirely by Google; forward tokens to your backend when exchanging for a session or account record.</p>
-          <div class="chip-row">
-            <span class="chip">Token exchange</span>
-            <span class="chip">Short-lived credentials</span>
-            <span class="chip">Session hand-off</span>
+          <ul class="list">
+            <li><span>Mastercard •4201</span><span class="pill success">Verified</span></li>
+            <li><span>Visa •4068</span><span class="pill warning">Unverified</span></li>
+            <li><span>Debit •9912</span><span class="pill">Default</span></li>
+          </ul>
+          <div class="chip-row" style="margin-top: 0.6rem">
+            <span class="chip">Set default</span>
+            <span class="chip">Remove</span>
+            <span class="chip">Re-verify</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="section-title">
+            <h2>Card preview</h2>
+            <small>Glassy gradient</small>
+          </div>
+          <div class="card-preview">
+            <div class="card-chip"></div>
+            <div class="card-number">5312 3040 0012 9900</div>
+            <div class="card-footer">
+              <span>MICHAEL JAMES</span>
+              <span>08/27</span>
+            </div>
           </div>
         </article>
       </section>
 
-      <footer>Payment Hub — glassy tabs, colorful gradients, and modern payments API.</footer>
+      <section id="moneyflows" class="layout-grid tab-panel" hidden>
+        <article class="card">
+          <div class="section-title">
+            <h2>Send money flow</h2>
+            <small>Stepper</small>
+          </div>
+          <ol class="steps">
+            <li><strong>Choose recipient:</strong> search by name, phone, or email.</li>
+            <li><strong>Enter amount:</strong> $148.50 with fee preview.</li>
+            <li><strong>Pick card:</strong> dropdown of verified cards.</li>
+            <li><strong>Confirm:</strong> fee + delivery estimate.</li>
+            <li><strong>Success:</strong> celebratory animation card.</li>
+          </ol>
+          <div class="action-row" style="margin-top: 0.6rem">
+            <button class="button" type="button">Make transfer</button>
+            <button class="button ghost" type="button">Save as favorite</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="section-title">
+            <h2>Receive money flow</h2>
+            <small>Accept & deposit</small>
+          </div>
+          <ul class="list">
+            <li><span>Incoming payment</span><span class="pill warning">Awaiting action</span></li>
+            <li><span>Accept payment</span><span class="pill success">Tap to approve</span></li>
+            <li><span>Deposit to wallet</span><span class="pill">Wallet</span></li>
+            <li><span>Deposit to card</span><span class="pill">Visa Direct · Mastercard Send</span></li>
+            <li><span>Confirmation</span><span class="pill success">Done</span></li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="section-title">
+            <h2>Delivery details</h2>
+            <small>Fees & speed</small>
+          </div>
+          <p>Display fee previews, FX impact, and arrival times just before confirmation. Keep users informed like the mockups show.</p>
+          <div class="chip-row">
+            <span class="chip">Instant</span>
+            <span class="chip">Same-day</span>
+            <span class="chip">Standard</span>
+          </div>
+        </article>
+      </section>
+
+      <section id="wallet" class="layout-grid tab-panel" hidden>
+        <article class="card">
+          <div class="section-title">
+            <h2>Wallet controls</h2>
+            <small>Balance</small>
+          </div>
+          <div class="action-row">
+            <button class="button" type="button">Add Money</button>
+            <button class="button ghost" type="button">Withdraw Money</button>
+          </div>
+          <p class="notice">Link bank accounts and cards for fast funding.</p>
+        </article>
+
+        <article class="card">
+          <div class="section-title">
+            <h2>History</h2>
+            <small>Credits & debits</small>
+          </div>
+          <ul class="list">
+            <li><span>Credit · Card</span><span class="muted">+$500.00</span></li>
+            <li><span>Debit · Send to Ayo</span><span class="muted">-$82.00</span></li>
+            <li><span>Credit · Refund</span><span class="muted">+$12.99</span></li>
+          </ul>
+          <div class="chip-row" style="margin-top: 0.6rem">
+            <span class="chip">Linked cards</span>
+            <span class="chip">Linked banks</span>
+          </div>
+        </article>
+      </section>
+
+      <section id="history" class="layout-grid tab-panel" hidden>
+        <article class="card">
+          <div class="section-title">
+            <h2>Transaction filters</h2>
+            <small>Sent, Received, Failed, Pending</small>
+          </div>
+          <div class="pill-group">
+            <span class="pill">Sent</span>
+            <span class="pill">Received</span>
+            <span class="pill">Failed</span>
+            <span class="pill">Pending</span>
+          </div>
+          <p class="notice">Toggle filters to mirror the analytics view in the inspiration screens.</p>
+        </article>
+
+        <article class="card">
+          <div class="section-title">
+            <h2>Transactions</h2>
+            <small>Detail page preview</small>
+          </div>
+          <ul class="list detailed">
+            <li>
+              <div>
+                <strong>Send to Lolia</strong>
+                <p class="muted">$275.00 · Visa •4068 · 09:41</p>
+              </div>
+              <span class="pill success">Completed</span>
+            </li>
+            <li>
+              <div>
+                <strong>Request from Uber Ride</strong>
+                <p class="muted">$32.45 · Wallet · Pending</p>
+              </div>
+              <span class="pill warning">Pending</span>
+            </li>
+            <li>
+              <div>
+                <strong>Refund from Gear</strong>
+                <p class="muted">$48.90 · Mastercard · 08:15</p>
+              </div>
+              <span class="pill">Received</span>
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="support" class="layout-grid tab-panel" hidden>
+        <article class="card">
+          <div class="section-title">
+            <h2>FAQ & help</h2>
+            <small>Support center</small>
+          </div>
+          <ul class="list">
+            <li><span>Disputes</span><span class="muted">How to submit evidence</span></li>
+            <li><span>Transfers</span><span class="muted">Delivery speed & fees</span></li>
+            <li><span>Cards</span><span class="muted">Verification walkthrough</span></li>
+          </ul>
+          <div class="action-row" style="margin-top: 0.6rem">
+            <button class="button" type="button">Open FAQ</button>
+            <button class="button ghost" type="button">Contact support</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="section-title">
+            <h2>Live chat & disputes</h2>
+            <small>Instant actions</small>
+          </div>
+          <p>Launch live chat, start a dispute, or send a support form directly from the UI.</p>
+          <div class="chip-row">
+            <span class="chip">Live chat</span>
+            <span class="chip">Submit a dispute</span>
+            <span class="chip">Contact form</span>
+          </div>
+        </article>
+      </section>
+
+      <section id="security" class="layout-grid tab-panel" hidden>
+        <article class="card">
+          <div class="section-title">
+            <h2>Security & compliance</h2>
+            <small>Alerts</small>
+          </div>
+          <ul class="list">
+            <li><span>Suspicious activity alert</span><span class="pill warning">Review</span></li>
+            <li><span>KYC verification</span><span class="pill">Upload ID</span></li>
+            <li><span>Terms & Privacy</span><span class="pill">View</span></li>
+          </ul>
+          <p class="notice">Capture IDs, show privacy/terms, and surface compliance banners.</p>
+        </article>
+
+        <article class="card">
+          <div class="section-title">
+            <h2>Admin (optional)</h2>
+            <small>Ops</small>
+          </div>
+          <ul class="list">
+            <li><span>User list</span><span class="muted">Manage customers</span></li>
+            <li><span>Transactions list</span><span class="muted">Search + filter</span></li>
+            <li><span>Fraud alerts</span><span class="muted">Escalate high-risk</span></li>
+            <li><span>Settlements</span><span class="muted">Fees & payouts</span></li>
+          </ul>
+        </article>
+      </section>
+
+      <footer>Payment Hub — glassy tabs, currency tools, and every screen from login to admin.</footer>
     </main>
     <script src="/static/app.js"></script>
   </body>
